@@ -67,13 +67,10 @@ io.on('connection', (socket) => {
 });
 
 // MongoDB Connection
-mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+mongoose.connect('mongodb+srv://sQpbJkHNcJzho6Pd:sQpbJkHNcJzho6Pd@manzil.gxdiu.mongodb.net/', 
+  { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.error('Error connecting to MongoDB:', err));
+  .catch(err => console.log('Error connecting to MongoDB:', err));
 
 // Routes
 app.use('/', Routes);
