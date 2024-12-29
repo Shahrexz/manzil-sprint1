@@ -12,7 +12,7 @@ const getRecommendations = async (req, res) => {
       return res.status(404).send('City not found');
     }
 
-    const googleApiKey = process.env.GOOGLE_API_KEY; // Use environment variable for Google API key
+    const googleApiKey = "AIzaSyAUwcgoinASwKDHlKDuW9HvNodSkBz64YI"; // Use environment variable for Google API key
     const { lat, lng } = location;
 
     // Fetch hotels
@@ -41,7 +41,7 @@ const getRecommendations = async (req, res) => {
 const searchPlaces = async (req, res) => {
   console.log("searching");
   const { query } = req.query;
-  const googleApiKey = process.env.GOOGLE_API_KEY;  // Ensure this is set correctly
+  const googleApiKey = "AIzaSyAUwcgoinASwKDHlKDuW9HvNodSkBz64YI";  // Ensure this is set correctly
 
   try {
     const response = await axios.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {
